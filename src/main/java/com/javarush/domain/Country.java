@@ -8,26 +8,21 @@ import java.util.Set;
 @Entity
 @Table(name = "country", schema = "world")
 public class Country {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "code")
     private String code;
 
     @Column(name = "code_2")
-    private String code2;
+    private String alternativeCode;
 
-    @Column(name = "name")
     private String name;
 
     @Column(name = "continent")
     @Enumerated(EnumType.ORDINAL)
     private Continent continent;
 
-    @Column(name = "region")
     private String region;
 
     @Column(name = "surface_area")
@@ -36,17 +31,16 @@ public class Country {
     @Column(name = "indep_year")
     private Short independenceYear;
 
-    @Column(name = "population")
     private Integer population;
 
     @Column(name = "life_expectancy")
     private BigDecimal lifeExpectancy;
 
     @Column(name = "gnp")
-    private BigDecimal gnp;
+    private BigDecimal GNP;
 
     @Column(name = "gnpo_id")
-    private BigDecimal gnpoId;
+    private BigDecimal GNPOId;
 
     @Column(name = "local_name")
     private String localName;
@@ -65,8 +59,6 @@ public class Country {
     @JoinColumn(name = "country_id")
     private Set<CountryLanguage> languages;
 
-    public Country() {
-    }
 
     public Integer getId() {
         return id;
@@ -84,12 +76,12 @@ public class Country {
         this.code = code;
     }
 
-    public String getCode2() {
-        return code2;
+    public String getAlternativeCode() {
+        return alternativeCode;
     }
 
-    public void setCode2(String code2) {
-        this.code2 = code2;
+    public void setAlternativeCode(String alternativeCode) {
+        this.alternativeCode = alternativeCode;
     }
 
     public String getName() {
@@ -148,20 +140,20 @@ public class Country {
         this.lifeExpectancy = lifeExpectancy;
     }
 
-    public BigDecimal getGnp() {
-        return gnp;
+    public BigDecimal getGNP() {
+        return GNP;
     }
 
-    public void setGnp(BigDecimal gnp) {
-        this.gnp = gnp;
+    public void setGNP(BigDecimal GNP) {
+        this.GNP = GNP;
     }
 
-    public BigDecimal getGnpoId() {
-        return gnpoId;
+    public BigDecimal getGNPOId() {
+        return GNPOId;
     }
 
-    public void setGnpoId(BigDecimal gnpoId) {
-        this.gnpoId = gnpoId;
+    public void setGNPOId(BigDecimal GNPOId) {
+        this.GNPOId = GNPOId;
     }
 
     public String getLocalName() {
